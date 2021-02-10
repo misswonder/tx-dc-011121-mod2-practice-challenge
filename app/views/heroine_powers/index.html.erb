@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Heroine Powers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @heroine_powers.each do |heroine_power| %>
+      <tr>
+        <td><%= link_to 'Show', heroine_power %></td>
+        <td><%= link_to 'Destroy', heroine_power, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Heroine Power', new_heroine_power_path %> 

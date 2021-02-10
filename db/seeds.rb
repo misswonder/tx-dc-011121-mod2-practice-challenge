@@ -1,5 +1,6 @@
 Heroine.destroy_all
 Power.destroy_all
+HeroinePower.destroy_all 
 
 powers = [
   {name: "super strength", description: "gives the wielder super-human strengths" },
@@ -24,3 +25,9 @@ heroines = [
 ]
 
 heroines.each { |heroine| Heroine.create(heroine) }
+
+
+hp1 = HeroinePower.create(power_id: Power.all[0].id, heroine_id: Heroine.all[0].id, strength: "Strong")
+hp2 = HeroinePower.create(power_id: Power.all[1].id, heroine_id: Heroine.all[1].id, strength: "Weak")
+hp3 = HeroinePower.create(power_id: Power.all[2].id, heroine_id: Heroine.all[2].id, strength: "Average")
+hp4 = HeroinePower.create(power_id: Power.all[3].id, heroine_id: Heroine.all[3].id, strength: "Strong")

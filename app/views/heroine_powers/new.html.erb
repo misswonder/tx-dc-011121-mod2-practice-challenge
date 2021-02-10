@@ -1,0 +1,27 @@
+<% if flash[:errors] %>
+    <h3>Errors: </h3>
+        <ul>
+            <% flash[:errors].each do |error| %>
+             <li> <%= error %> </li>
+            <% end %>
+         </ul>
+<% end %>
+
+<%= form_for(@heroine_power) do |f| %>
+  Heroine: <%= f.collection_select :heroine_id, Heroine.all, :id, :name%>
+  Power: <%= f.collection_select :power_id, Power.all, :id, :name %>
+  <label> Strength: </label><br> 
+<%= f.text_field :strength %>
+
+<%# <% params.inspect %> 
+
+<%= f.submit %>
+<% end %>
+
+<%= form_with model: @heroine_power do |f| %>
+  <%= f.collection_select :heroine_id, Heroine.all, :id, :name %><br>
+  <%= f.collection_select :power_id, Power.all, :id, :name %><br>
+  <%= f.text_field :strength, :placeholder => "Input Strength" %>
+
+<%= f.submit %>
+<% end %>

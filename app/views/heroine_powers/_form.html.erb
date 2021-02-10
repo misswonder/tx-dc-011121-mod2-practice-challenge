@@ -1,0 +1,17 @@
+<%= form_with(model: heroine_power, local: true) do |form| %>
+  <% if heroine_power.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(heroine_power.errors.count, "error") %> prohibited this heroine_power from being saved:</h2>
+
+      <ul>
+      <% heroine_power.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
